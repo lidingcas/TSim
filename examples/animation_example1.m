@@ -51,6 +51,8 @@ Ptime = 0:9;
 % [ N, D ] = LPF( 1, 200, 200 );
 % save('LPF.mat', 'N', 'D');
 
+load('LPF.mat');
+
 t = CompositeTrajectory('Traj1');
 t = t.set_av('linear', Atime, Adata);
 t = t.set_position('spline', Ptime, Pdata );
