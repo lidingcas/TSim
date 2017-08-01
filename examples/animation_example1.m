@@ -10,7 +10,7 @@ sample_rate = 100;               % sensor sample rate
 ts = 1/sample_rate;
 
 % Define the environment
-env = Env(Env.ENU);
+env = Env(Env.NED); %Env(Env.ENU);
 
 r = 5*pi();
 
@@ -48,7 +48,8 @@ Ptime = 0:9;
 % This filter takes several seconds to run, but does a nice job of
 % ensuring that our waveforms look reasonable.
 % Note that it DOES introduce phase delay (which we don't care about)
-[ N, D ] = LPF( 1, 200, 200 );
+% [ N, D ] = LPF( 1, 200, 200 );
+% save('LPF.mat', 'N', 'D');
 
 t = CompositeTrajectory('Traj1');
 t = t.set_av('linear', Atime, Adata);
